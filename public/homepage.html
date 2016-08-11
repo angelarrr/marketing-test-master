@@ -20,28 +20,47 @@
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="sidebar-left col-xs-12 col-sm-4">
-		    		
+
 	    			<form action="action_page.php">
+              <h1>Please Register</h1>
 						  <input type="text" name="username" value="username">
 						  <input type="text" name="email" value="email">
 						  <input type="submit" value="Submit">
 						</form>
-	    				
+
     			</div>
 	    		<div class="main-content col-xs-12 col-sm-8">
+
 	    			<div class="registrants">
-		    			{registrants}
+              <h1>Registrants</h1>
+		    			<ul class="registrants-list">
+              </ul>
 	    			</div>
 	    		</div>
 	    	</div>
 	    </div>
     </main>
     <footer>
-	    
+
     </footer>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $.ajax({
+        url:'/',
+        dataType: 'json',
+        method: 'GET'
+      }).done(function(data){
+        showGuests(data);
+      });
+
+      function showGuests(data){
+        $.each(data.guests, function(i, guest) {
+            $(".registrants-list").append("<li>" + guest.name + "(" + guest.email + ")</li>");
+        });
+      }
+    </script>
   </body>
 </html>

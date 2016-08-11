@@ -1072,7 +1072,7 @@ body {
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
-  background-color: #fff; }
+  background-color: #F8F8F5; }
 
 input,
 button,
@@ -5810,7 +5810,7 @@ body {
   font-size: 16px; }
 
 header {
-  background: black;
+  background: #4A4A4A;
   text-align: center;
   padding: 20px 0; }
 
@@ -5824,15 +5824,29 @@ header h1 {
 main {
   padding: 100px 0; }
 
+main h1 {
+  padding-bottom: 24px;
+  margin: 0;
+  color: #4A4A4A;
+  font-size: 14px;  }
+
 main .sidebar-left form {
   margin-bottom: 20px;
   padding: 30px;
-  background: #eaeaea;
-  border: 1px solid #ccc; }
+  background: #fff;
+  border: 1px solid #C3C3C3; }
 
 main .sidebar-left form input {
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px; }
+
+main .sidebar-left form input[type="submit"]{
+  background: #2AA070;
+  border: 0;
+  width: 50%; }
 
 main .sidebar-left .welcome-message {
   padding: 30px;
@@ -5841,5 +5855,5 @@ main .sidebar-left .welcome-message {
 
 main .main-content .registrants {
   padding: 30px;
-  background: #eaeaea;
-  border: 1px solid #ccc; }
+  background: #fff;
+  border: 1px solid #C3C3C3; }
