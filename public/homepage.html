@@ -41,7 +41,7 @@
 
 	    			<div class="registrants">
               <h1>Registrants</h1>
-		    			<ul class="registrants-list">
+		    			<ul class="registrants-list" id="sortable">
               </ul>
 	    			</div>
 	    		</div>
@@ -54,8 +54,16 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+      $("#sortable").sortable({
+        revert: true,
+        cursor: "move"
+      });
+      $("#sortable").disableSelection();
+
       // list out all registrants on page load
       $.ajax({
         url:'/',
