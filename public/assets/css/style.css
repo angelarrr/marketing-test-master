@@ -5819,7 +5819,7 @@ header h1 {
   margin: 0;
   color: white;
   text-transform: uppercase;
-  font-size: 14px; }
+  font-size: 22px; }
 
 main {
   padding: 100px 0; }
@@ -5828,7 +5828,16 @@ main h1 {
   padding-bottom: 24px;
   margin: 0;
   color: #4A4A4A;
-  font-size: 14px;  }
+  font-size: 22px;  }
+
+main .msg-center {
+  background: #2AA070;
+  text-align: center;
+  color: white;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  display: none; }
 
 main .sidebar-left form {
   margin-bottom: 20px;
@@ -5838,15 +5847,21 @@ main .sidebar-left form {
 
 main .sidebar-left form input {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #C3C3C3;
-  border-radius: 3px; }
+  border-radius: 3px;
+  color: #7E7E7E; }
 
 main .sidebar-left form input[type="submit"]{
   background: #2AA070;
+  margin-bottom: 0;
+  padding: 12px;
   border: 0;
-  width: 50%; }
+  width: 50%;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px;  }
 
 main .sidebar-left .welcome-message {
   padding: 30px;
@@ -5857,3 +5872,23 @@ main .main-content .registrants {
   padding: 30px;
   background: #fff;
   border: 1px solid #C3C3C3; }
+
+main .main-content .registrants-list {
+  list-style: none;
+  padding: 0; }
+
+.registrants-list li {
+  background: #FAFAFA;
+  color: #7D7D7D;
+  border: 1px solid #C3C3C3;
+  padding: 19px;
+  margin-bottom: 15px; }
+
+.registrants-list li div {
+  display: inline-block;  }
+
+.registrants-list li .guest-info {
+  margin-left: 20px;  }
+
+.registrants-list li .remove {
+  float: right; }
