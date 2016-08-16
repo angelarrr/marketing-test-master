@@ -5835,7 +5835,7 @@ main .msg-center {
   text-align: center;
   color: white;
   height: 80px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   border-radius: 3px;
   display: none; }
 
@@ -5887,7 +5887,7 @@ main .main-content .registrants-list {
 .registrants-list li div {
   display: inline-block;  }
 
-.registrants-list li .guest-info {
+.registrants-list li .guest-name {
   margin-left: 20px;  }
 
 .registrants-list li .remove {
