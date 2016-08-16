@@ -35,8 +35,8 @@
 
 	    			<form>
               <h1>Please Register</h1>
-						  <input type="text" id="username" name="username" value="username">
-						  <input type="text" id="email" name="email" value="email">
+						  <input type="text" id="username" name="username" placeholder="username">
+						  <input type="text" id="email" name="email" placeholder="email">
 						  <input type="submit" value="Submit">
 						</form>
 
@@ -134,6 +134,9 @@
             showStatus(msg);
             // show in registrants box
             addGuest(data);
+            // clear input values
+            $('#username').val("");
+            $('#email').val("");
           }
         });
       })
