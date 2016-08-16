@@ -19,9 +19,13 @@
     </header>
     <main>
 	    <div class="container">
+
         <div class="row">
-          <div class="message col-lg-12">
-            <div class="msg-center">
+          <div class="msg-center col-lg-12">
+            <div class="message">
+              <div class="status-msg">
+              </div>
+              <div class='close-box' onClick="closeMe()"><span class='glyphicon glyphicon-remove'></span></div>
             </div>
           </div>
         </div>
@@ -37,10 +41,14 @@
 						</form>
 
     			</div>
+
 	    		<div class="main-content col-xs-12 col-sm-8">
 
 	    			<div class="registrants">
               <h1>Registrants</h1>
+              <div class="registrant-msg">
+                There are no registrants
+              </div>
 		    			<ul class="registrants-list" id="sortable">
               </ul>
 	    			</div>
@@ -64,6 +72,15 @@
       });
       $("#sortable").disableSelection();
 
+      // show there are no registrants msg
+      function showRegMsg(){
+        if ($('.registrants-list').find('li').length === 0){
+          $('.registrant-msg').show();
+        } else {
+          $('.registrant-msg').hide();
+        }
+      };
+
       // list out all registrants on page load
       $.ajax({
         url:'/',
@@ -71,6 +88,7 @@
         method: 'GET'
       }).done(function(data){
         showGuests(data);
+        showRegMsg();
       });
 
       // show all registrants
@@ -82,8 +100,14 @@
 
       // add registrant
       function addGuest(guest){
-        $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> " + "<div class='guest-name'>" + guest.name + "</div>" + " (" + "<div class='guest-email' data-email='" + guest.email + "'>" + guest.email + "</div>)" + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
+        $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> " + "<div class='guest-name'>" + guest.name + "</div>" + "<div class='guest-email' data-email='" + guest.email + "'>" + " (" + guest.email + ")</div>" + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
       }
+
+      // show status msg
+      function showStatus(msg){
+        $('.msg-center').show();
+        $('.status-msg').html(msg);
+      };
 
       // form submit new registrant
       $('form').on('submit', function(e){
@@ -99,8 +123,9 @@
           type: 'POST',
           data: data,
           success: function(msg){
+            $('.registrant-msg').hide();
             // show registered message
-            $('.msg-center').show().html(msg);
+            showStatus(msg);
             // show in registrants box
             addGuest(data);
           }
@@ -116,13 +141,18 @@
           url: '/' + email,
           type: 'DELETE',
           data: email,
-          success: function(d){
-            $('.msg-center').show().html(d);
+          success: function(msg){
+            showStatus(msg);
             guestInfo.remove();
+            showRegMsg();
           }
         });
       })
 
+      // close status msg box
+      function closeMe(){
+        $('.message').hide();
+      }
     </script>
   </body>
 </html>

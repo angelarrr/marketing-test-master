@@ -5819,7 +5819,8 @@ header h1 {
   margin: 0;
   color: white;
   text-transform: uppercase;
-  font-size: 22px; }
+  font-size: 22px;
+  font-weight: 200; }
 
 main {
   padding: 100px 0; }
@@ -5831,13 +5832,28 @@ main h1 {
   font-size: 22px;  }
 
 main .msg-center {
+  display: none;  }
+
+main .message {
   background: #2AA070;
   text-align: center;
-  color: white;
   height: 80px;
   margin-bottom: 30px;
   border-radius: 3px;
-  display: none; }
+  padding: 25px;
+  display: flex;
+  align-items: center; }
+
+main .message .status-msg, .close-box {
+  color: white; }
+
+main .message .status-msg {
+  font-weight: 200;
+  flex: 1;  }
+
+main .message .close-box {
+  opacity: 0.5;
+  margin-left: auto;  }
 
 main .sidebar-left form {
   margin-bottom: 20px;
@@ -5856,7 +5872,7 @@ main .sidebar-left form input {
 main .sidebar-left form input[type="submit"]{
   background: #2AA070;
   margin-bottom: 0;
-  padding: 12px;
+  padding: 15px;
   border: 0;
   width: 50%;
   text-transform: uppercase;
@@ -5877,18 +5893,42 @@ main .main-content .registrants-list {
   list-style: none;
   padding: 0; }
 
+.registrant-msg {
+  height: 167px;
+  border: 2px dashed #C3C3C3;
+  color: #7D7D7D;
+  text-align: center;
+  line-height: 160px;  }
+
 .registrants-list li {
   background: #FAFAFA;
   color: #7D7D7D;
   border: 1px solid #C3C3C3;
-  padding: 19px;
-  margin-bottom: 15px; }
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;  }
 
-.registrants-list li div {
-  display: inline-block;  }
+@media (min-width:450px) {
+  .registrants-list li {
+    padding: 19px;
+  }
+}
+
+.registrants-list li .order-bar, .remove {
+  color: #B6B6B6; }
 
 .registrants-list li .guest-name {
-  margin-left: 20px;  }
+  margin-left: 10px;  }
+
+@media (min-width:450px) {
+  .registrants-list li .guest-name {
+    margin-left: 20px;
+  }
+}
 
 .registrants-list li .remove {
-  float: right; }
+  margin-left: auto; }
+
+.close-box:hover, .remove:hover {
+  cursor: pointer;  }
