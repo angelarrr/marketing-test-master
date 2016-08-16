@@ -94,13 +94,19 @@
       // show all registrants
       function showGuests(data){
         $.each(data.guests, function(i, guest) {
-            $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> " + "<div class='guest-name'>" + guest.name + "</div>" + " (" + "<div class='guest-email' data-email='" + guest.email + "'>" + guest.email + "</div>)" + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
+            $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> "
+            + "<div class='guest-name'>" + guest.name + "</div>"
+            + "<div class='guest-email' data-email='" + guest.email + "'>" + " (" + guest.email + ")</div>"
+            + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
         });
       };
 
       // add registrant
       function addGuest(guest){
-        $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> " + "<div class='guest-name'>" + guest.name + "</div>" + "<div class='guest-email' data-email='" + guest.email + "'>" + " (" + guest.email + ")</div>" + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
+        $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> "
+        + "<div class='guest-name'>" + guest.name + "</div>"
+        + "<div class='guest-email' data-email='" + guest.email + "'>" + " (" + guest.email + ")</div>"
+        + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
       }
 
       // show status msg
