@@ -20,27 +20,9 @@ $.ajax({
   dataType: 'json',
   method: 'GET'
 }).done(function(data){
-  showGuests(data);
+  $("#guestListTmp").tmpl(data.guests).appendTo(".registrants-list");
   showRegMsg();
 });
-
-// show all registrants
-function showGuests(data){
-  $.each(data.guests, function(i, guest) {
-      $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> "
-      + "<div class='guest-name'>" + guest.name + "</div>"
-      + "<div class='guest-email' data-email='" + guest.email + "'>" + " (" + guest.email + ")</div>"
-      + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
-  });
-};
-
-// add registrant
-function addGuest(guest){
-  $(".registrants-list").append("<li><div class='order-bar'><i class='fa fa-bars' aria-hidden='true'></i></div> "
-  + "<div class='guest-name'>" + guest.name + "</div>"
-  + "<div class='guest-email' data-email='" + guest.email + "'>" + " (" + guest.email + ")</div>"
-  + "<div class='remove'><span class='glyphicon glyphicon-remove'></span></div></li>");
-}
 
 // show status msg
 function showStatus(msg){
@@ -66,7 +48,7 @@ $('form').on('submit', function(e){
       // show registered message
       showStatus(msg);
       // show in registrants box
-      addGuest(data);
+      $("#guestListTmp").tmpl(data).appendTo(".registrants-list");
       // clear input values
       $('#username').val("");
       $('#email').val("");

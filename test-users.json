@@ -3,6 +3,22 @@
     {
       "name": "Rudy Littlegye",
       "email": "rudy@notredame.edu"
+    },
+    {
+      "email": "someone@house.com",
+      "name": "someone"
+    },
+    {
+      "email": "myname@email.com",
+      "name": "myname"
+    },
+    {
+      "email": "user@email.com",
+      "name": "user"
+    },
+    {
+      "email": "hello@goodbye.com",
+      "name": "hello"
     }
   ]
 }
